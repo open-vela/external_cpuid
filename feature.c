@@ -218,7 +218,7 @@ static const struct cpu_feature_t features [] = {
 	{ 0x00000007, 0, REG_EBX, 0x00200000, VENDOR_INTEL                                , "AVX512 integer FMA instructions (AVX512IFMA)"},
 	{ 0x00000007, 0, REG_EBX, 0x00400000, VENDOR_INTEL | VENDOR_AMD                   , "Persistent commit instruction (PCOMMIT)"},
 	{ 0x00000007, 0, REG_EBX, 0x00800000, VENDOR_INTEL | VENDOR_AMD                   , "CLFLUSHOPT instruction"},
-	{ 0x00000007, 0, REG_EBX, 0x01000000, VENDOR_INTEL | VENDOR_AMD                   , "cache line write-back instruction (CLWB)"},
+	{ 0x00000007, 0, REG_EBX, 0x01000000, VENDOR_INTEL                                , "cache line write-back instruction (CLWB)"},
 	{ 0x00000007, 0, REG_EBX, 0x02000000, VENDOR_INTEL                                , "Intel Processor Trace"},
 	{ 0x00000007, 0, REG_EBX, 0x04000000, VENDOR_INTEL                                , "AVX512 prefetch instructions (AVX512PF)"},
 	{ 0x00000007, 0, REG_EBX, 0x08000000, VENDOR_INTEL                                , "AVX512 exponent/reciprocal instructions (AVX512ER)"},
@@ -229,10 +229,10 @@ static const struct cpu_feature_t features [] = {
 
 	{ 0x00000007, 0, REG_ECX, 0x00000001, VENDOR_INTEL                                , "PREFETCHWT1 instruction"},
 	{ 0x00000007, 0, REG_ECX, 0x00000002, VENDOR_INTEL                                , "AVX512 vector byte manipulation instructions (AVX512VBMI)"},
-	{ 0x00000007, 0, REG_ECX, 0x00000004, VENDOR_INTEL                                , "UMIP (User Mode Instruction Prevention)"},
-	{ 0x00000007, 0, REG_ECX, 0x00000008, VENDOR_INTEL                                , "PKU (Protection Keys for User-mode pages)"},
-	{ 0x00000007, 0, REG_ECX, 0x00000010, VENDOR_INTEL                                , "OSPKE (OS has enabled protection keys)"},
-	{ 0x00000007, 0, REG_ECX, 0x00000020, VENDOR_INTEL                                , "WAITPKG (Wait and Pause Enhancements)"},
+	{ 0x00000007, 0, REG_ECX, 0x00000004, VENDOR_INTEL                                , "User Mode Instruction Prevention (UMIP)"},
+	{ 0x00000007, 0, REG_ECX, 0x00000008, VENDOR_INTEL                                , "Protection Keys for User-mode pages (PKU)"},
+	{ 0x00000007, 0, REG_ECX, 0x00000010, VENDOR_INTEL                                , "OS has enabled protection keys (OSPKE)"},
+	{ 0x00000007, 0, REG_ECX, 0x00000020, VENDOR_INTEL                                , "Wait and Pause Enhancements (WAITPKG)"},
 	{ 0x00000007, 0, REG_ECX, 0x00000040, VENDOR_INTEL                                , "AVX512_VBMI2"},
 	{ 0x00000007, 0, REG_ECX, 0x00000080, VENDOR_INTEL                                , "CET shadow stack (CET_SS)"},
 	{ 0x00000007, 0, REG_ECX, 0x00000100, VENDOR_INTEL                                , "Galois Field NI / Galois Field Affine Transformation (GFNI)"},
@@ -249,15 +249,15 @@ static const struct cpu_feature_t features [] = {
 /*	{ 0x00000007, 0, REG_ECX, 0x00080000, VENDOR_INTEL | VENDOR_AMD                   , ""}, */   /* Reserved */
 /*	{ 0x00000007, 0, REG_ECX, 0x00100000, VENDOR_INTEL | VENDOR_AMD                   , ""}, */   /* Reserved */
 /*	{ 0x00000007, 0, REG_ECX, 0x00200000, VENDOR_INTEL | VENDOR_AMD                   , ""}, */   /* Reserved */
-	{ 0x00000007, 0, REG_ECX, 0x00400000, VENDOR_INTEL | VENDOR_AMD                   , "RDPID (Read Processor ID)"},
+	{ 0x00000007, 0, REG_ECX, 0x00400000, VENDOR_INTEL                                , "Read Processor ID (RDPID)"},
 /*	{ 0x00000007, 0, REG_ECX, 0x00800000, VENDOR_INTEL | VENDOR_AMD                   , ""}, */   /* Reserved */
 /*	{ 0x00000007, 0, REG_ECX, 0x01000000, VENDOR_INTEL | VENDOR_AMD                   , ""}, */   /* Reserved */
-	{ 0x00000007, 0, REG_ECX, 0x02000000, VENDOR_INTEL                                , "CLDEMOTE (Cache Line Demote)"},
+	{ 0x00000007, 0, REG_ECX, 0x02000000, VENDOR_INTEL                                , "Cache Line Demote (CLDEMOTE)"},
 /*	{ 0x00000007, 0, REG_ECX, 0x04000000, VENDOR_INTEL | VENDOR_AMD                   , ""}, */   /* Reserved */
-	{ 0x00000007, 0, REG_ECX, 0x08000000, VENDOR_INTEL                                , "MOVDIRI (32-bit Direct Stores)"},
-	{ 0x00000007, 0, REG_ECX, 0x10000000, VENDOR_INTEL                                , "MOVDIRI64B (64-bit Direct Stores)"},
-	{ 0x00000007, 0, REG_ECX, 0x20000000, VENDOR_INTEL                                , "ENQCMD (Enqueue Stores)"},
-	{ 0x00000007, 0, REG_ECX, 0x40000000, VENDOR_INTEL                                , "SGX_LC (SGX Launch Configuration)"},
+	{ 0x00000007, 0, REG_ECX, 0x08000000, VENDOR_INTEL                                , "32-bit Direct Stores (MOVDIRI)"},
+	{ 0x00000007, 0, REG_ECX, 0x10000000, VENDOR_INTEL                                , "64-bit Direct Stores (MOVDIRI64B)"},
+	{ 0x00000007, 0, REG_ECX, 0x20000000, VENDOR_INTEL                                , "Enqueue Stores (ENQCMD)"},
+	{ 0x00000007, 0, REG_ECX, 0x40000000, VENDOR_INTEL                                , "SGX Launch Configuration (SGX_LC)"},
 /*	{ 0x00000007, 0, REG_ECX, 0x80000000, VENDOR_INTEL | VENDOR_AMD                   , ""}, */   /* Reserved */
 
 /*	{ 0x00000007, 0, REG_EDX, 0x00000001, VENDOR_INTEL | VENDOR_AMD                   , ""}, */   /* Reserved */
@@ -807,7 +807,7 @@ static const struct cpu_feature_t features [] = {
 	{ 0x80000001, 0, REG_ECX, 0x00000008,                VENDOR_AMD                   , "extended APIC space"},
 	{ 0x80000001, 0, REG_ECX, 0x00000010,                VENDOR_AMD                   , "AltMovCr8"},
 	{ 0x80000001, 0, REG_ECX, 0x00000020,                VENDOR_AMD                   , "advanced bit manipulation"},
-	{ 0x80000001, 0, REG_ECX, 0x00000020, VENDOR_INTEL | VENDOR_AMD                   , "LZCNT instruction"},
+	{ 0x80000001, 0, REG_ECX, 0x00000020, VENDOR_INTEL                                , "LZCNT instruction"},
 	{ 0x80000001, 0, REG_ECX, 0x00000040,                VENDOR_AMD                   , "SSE4A instructions"},
 	{ 0x80000001, 0, REG_ECX, 0x00000080,                VENDOR_AMD                   , "mis-aligned SSE support"},
 	{ 0x80000001, 0, REG_ECX, 0x00000100, VENDOR_INTEL | VENDOR_AMD                   , "3DNow! prefetch instructions"},
@@ -869,7 +869,7 @@ static const struct cpu_feature_t features [] = {
 /*	{ 0x80000008, 0, REG_EBX, 0x00000040,                VENDOR_AMD                   , ""}, */   /* Reserved */
 /*	{ 0x80000008, 0, REG_EBX, 0x00000080,                VENDOR_AMD                   , ""}, */   /* Reserved */
 /*	{ 0x80000008, 0, REG_EBX, 0x00000100,                VENDOR_AMD                   , ""}, */   /* Reserved */
-	{ 0x80000008, 0, REG_EBX, 0x00000200, VENDOR_INTEL | VENDOR_AMD                   , "WBNOINVD (Write back and do not invalidate cache)"},
+	{ 0x80000008, 0, REG_EBX, 0x00000200, VENDOR_INTEL                                , "WBNOINVD (Write back and do not invalidate cache)"},
 /*	{ 0x80000008, 0, REG_EBX, 0x00000400,                VENDOR_AMD                   , ""}, */   /* Reserved */
 /*	{ 0x80000008, 0, REG_EBX, 0x00000800,                VENDOR_AMD                   , ""}, */   /* Reserved */
 	{ 0x80000008, 0, REG_EBX, 0x00001000,                VENDOR_AMD                   , "Indirect Branch Prediction Barrier (IBPB)"},
