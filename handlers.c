@@ -649,7 +649,8 @@ static void handle_std_monitor(struct cpu_regs_t *regs, struct cpuid_state_t *st
 		unsigned reserved:20;
 	};
 	struct edx_monitor_t {
-		unsigned c:32;
+		unsigned c:20;
+		unsigned reserved:12;
 	};
 	unsigned int i;
 	struct eax_monitor_t *eax = (struct eax_monitor_t *)&regs->eax;
